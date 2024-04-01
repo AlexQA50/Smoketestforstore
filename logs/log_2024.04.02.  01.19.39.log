@@ -1,0 +1,77 @@
+
+-----
+Test: tests/test_smoke_store.py::test_smoke (call)
+Start time: 2024-04-02 01:19:42.345033
+Start name method: authorization
+
+End time: 2024-04-02 01:19:52.893117
+End name method: authorization
+URL: https://it-m.by/
+
+-----
+
+-----
+Test: tests/test_smoke_store.py::test_smoke (call)
+Start time: 2024-04-02 01:19:52.894117
+Start name method: select_main_catalog
+
+End time: 2024-04-02 01:19:57.009127
+End name method: select_main_catalog
+URL: https://it-m.by/catalog/
+
+-----
+
+-----
+Test: tests/test_smoke_store.py::test_smoke (call)
+Start time: 2024-04-02 01:19:57.009127
+Start name method: select_monitors_catalog
+
+End time: 2024-04-02 01:20:04.811494
+End name method: select_monitors_catalog
+URL: https://it-m.by/catalog/monitory/
+
+-----
+
+-----
+Test: tests/test_smoke_store.py::test_smoke (call)
+Start time: 2024-04-02 01:20:04.812492
+Start name method: select_iiyama_catalog
+
+End time: 2024-04-02 01:20:21.386242
+End name method: select_iiyama_catalog
+URL: https://it-m.by/catalog/monitory/iiyama-prolite-xub2792qsu-w5/
+
+-----
+
+-----
+Test: tests/test_smoke_store.py::test_smoke (call)
+Start time: 2024-04-02 01:20:21.465197
+Start name method: check_product_and_add_to_cart
+
+End time: 2024-04-02 01:20:25.342476
+End name method: check_product_and_add_to_cart
+URL: https://it-m.by/basket/
+
+-----
+
+-----
+Test: tests/test_smoke_store.py::test_smoke (call)
+Start time: 2024-04-02 01:20:25.418678
+Start name method: click_place
+
+End time: 2024-04-02 01:20:25.615153
+End name method: click_place
+URL: https://it-m.by/basket/
+
+-----
+
+-----
+Test: tests/test_smoke_store.py::test_smoke (call)
+Start time: 2024-04-02 01:20:25.616153
+Start name method: input_shipping_information
+
+End time: 2024-04-02 01:20:36.712330
+End name method: input_shipping_information
+URL: https://it-m.by/order/
+
+-----

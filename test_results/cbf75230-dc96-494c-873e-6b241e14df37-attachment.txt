@@ -1,0 +1,36 @@
+  The test has started!!!!
+Start Test 1!
+Current url is: https://it-m.by/
+Click enter login button
+Input user name
+Input password
+Click enter button
+Current url is: https://it-m.by/
+Current url is correct: https://it-m.by/
+Authorization was successful!!!
+Move to catalog button
+Click catalog button
+Assert word is: Каталог
+Click monitors catalog button
+Click iiyama catalog button
+Click diagonal button
+Sent min diagonal
+Sent max diagonal
+Click body_color_button
+Click white_color_body
+Click selected_product_1_field
+Click move to product page
+1 179.51
+1 179.51
+The product has been added to the cart
+Go to the shopping cart
+Price total for assert is: 1 179.51
+1 179.51
+The price is checked and correct with the price in the catalog
+Clicking the order registration button
+Assert price is: 1 179.51
+Click shipping method
+Input phone field
+Input address field
+screenshot_2024.04.02.  01.20.36.png
+  The test is over!!!
