@@ -30,7 +30,6 @@ class Base:
         print("Current url is correct: " + get_url)
 
     # Method assert price
-
     def assert_price(self, price, result):
         value_price = price
         assert value_price == result
