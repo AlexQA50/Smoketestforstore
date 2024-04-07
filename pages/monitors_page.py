@@ -7,7 +7,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver import ActionChains
 from base.base_class import Base
 from utilities.logger import Logger
-from selenium.common.exceptions import NoSuchElementException
 
 
 class Monitors_page(Base):
@@ -29,7 +28,6 @@ class Monitors_page(Base):
 
     min_price_value = 27
     max_price_value = 27
-    ignored_exceptions = (NoSuchElementException, StaleElementReferenceException,)
 
     # Getters
 
@@ -39,8 +37,7 @@ class Monitors_page(Base):
 
     def get_diagonal(self):
         """Получение локатора кнопки Диагональ"""
-        return WebDriverWait(self.driver, 30, ignored_exceptions=self.ignored_exceptions).until(
-            EC.presence_of_element_located((By.XPATH, self.select_diagonal)))
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.select_diagonal)))
 
     def get_min_price(self):
         """Получение локатора поля Минимальная диагональ"""
@@ -76,8 +73,14 @@ class Monitors_page(Base):
         print("Click iiyama catalog button")
 
     def click_diagonal_button(self):
-        self.get_diagonal().click()
-        print("Click diagonal button")
+        """Клик кнопки Диагональ. Возможна ошибка StaleElementReferenceException потому через Try"""
+        try:
+            self.get_diagonal().click()
+            print("Click diagonal button")
+
+        except StaleElementReferenceException:
+            self.get_diagonal().click()
+            print("Was StaleElementReferenceException")
 
     def send_min_price(self):
         """Ввод минимальной диагонали """
@@ -89,15 +92,15 @@ class Monitors_page(Base):
         self.get_max_price().send_keys(self.max_price_value)
         print("Sent max diagonal")
 
-    # def click_body_color_button_button(self):
-    #     """Клик кнопки Цвет корпуса"""
-    #     self.get_body_color_button().click()
-    #     print("Click body_color_button")
-    #
-    # def click_white_color_body(self):
-    #     """Клик кнопки белого цвета корпуса"""
-    #     self.get_white_color_body().click()
-    #     print("Click white_color_body")
+    def click_body_color_button_button(self):
+        """Клик кнопки Цвет корпуса"""
+        self.get_body_color_button().click()
+        print("Click body_color_button")
+
+    def click_white_color_body(self):
+        """Клик кнопки белого цвета корпуса"""
+        self.get_white_color_body().click()
+        print("Click white_color_body")
 
     def move_to_selected_product_1_field(self):
         """Наведение мыши на поле товара для появления кнопки В корзину.
@@ -140,10 +143,10 @@ class Monitors_page(Base):
             time.sleep(1)
             self.send_max_price()
             time.sleep(1)
-            # self.click_body_color_button_button()
-            # time.sleep(1)
-            # self.click_white_color_body()
-            # time.sleep(1)
+            self.click_body_color_button_button()
+            time.sleep(1)
+            self.click_white_color_body()
+            time.sleep(1)
             self.move_to_selected_product_1_field()
             time.sleep(1)
             self.click_move_to_product_page()
