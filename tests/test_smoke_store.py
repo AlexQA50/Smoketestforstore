@@ -16,6 +16,7 @@ from pages.basket_page import Basket_page
 def test_smoke(start_and_finish):
     options = webdriver.ChromeOptions()
     options.add_experimental_option("detach", True)
+    options.add_argument("--headless")
     driver = webdriver.Chrome(options=options, service=ChromeService(ChromeDriverManager().install()))
 
     print("Start Test 1!")
